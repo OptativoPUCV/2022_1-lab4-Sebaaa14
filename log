@@ -67,3 +67,15 @@ Wed Apr  6 19:07:27 UTC 2022:
  1 file changed, 3 insertions(+), 1 deletion(-)
  tests:  0|0
 f0da2a1
+Wed Apr  6 19:07:42 UTC 2022: 
+ hashmap.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+In file included from test.c:4:0:
+hashmap.c: In function ‘createMap’:
+hashmap.c:56:11: error: ‘size’ undeclared (first use in this function); did you mean ‘sinl’?
+   m->size=size;
+           ^~~~
+           sinl
+hashmap.c:56:11: note: each undeclared identifier is reported only once for each function it appears in
+Compilation failed
+b078f3e
