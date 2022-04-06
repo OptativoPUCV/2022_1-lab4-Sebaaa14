@@ -56,6 +56,7 @@ HashMap * createMap(long capacity) {
   m->size = 0 ;
   m->capacity = capacity;
   m->current = 0 ;
+  m->buckets= NULL;
   return m;
 }
 
