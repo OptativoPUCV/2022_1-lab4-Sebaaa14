@@ -89,3 +89,17 @@ Wed Apr  6 19:08:02 UTC 2022:
  1 file changed, 1 insertion(+), 1 deletion(-)
  tests:  0|0
 8c57fb5
+Wed Apr  6 19:10:12 UTC 2022: 
+ hashmap.c | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+In file included from test.c:4:0:
+hashmap.c: In function ‘createMap’:
+hashmap.c:56:10: error: assignment makes integer from pointer without a cast [-Werror=int-conversion]
+   m->size= NULL ;
+          ^
+hashmap.c:58:13: error: assignment makes integer from pointer without a cast [-Werror=int-conversion]
+   m->current= NULL ;
+             ^
+cc1: all warnings being treated as errors
+Compilation failed
+55b7da3
