@@ -77,10 +77,11 @@ Pair * searchMap(HashMap * map,  char * key) {
   
   while (map->buckets[pos] != NULL && is_equal(map->buckets[pos]->key,key) == 0){
     pos = ((pos+1)%(map->capacity)); //Para avanzar de posicion como un nextList
+     if(map->buckets[pos]==NULL || map->buckets[pos]->value == NULL)
+    return NULL;
   }
   
-  if(map->buckets[pos]==NULL || map->buckets[pos]->value == NULL)
-    return NULL;
+ 
 
   map->current=pos;
   
