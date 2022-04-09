@@ -58,7 +58,16 @@ void insertMap(HashMap * map, char * key, void * value) {
 }
 
 void enlarge(HashMap * map) {
-    enlarge_called = 1; //no borrar (testing purposes)
+  enlarge_called = 1; //no borrar (testing purposes)
+  //////////////////////////////////////////// 
+  //Lo hice con lo que explico la clase, pro 
+  int auxCapacidad = map->capacity;
+  Pair ** auxArreglo = map->buckets;
+  map -> capacity *= 2;
+  map->buckets=(Pair**) malloc (sizeof(Pair*)*map->capacity);
+  map->size=0;
+  
+  
 }
 
 
@@ -105,16 +114,15 @@ Pair * firstMap(HashMap * map) {
     } 
     i++;
   }
-    return NULL;
+  return NULL;
 }
 
 Pair * nextMap(HashMap * map) {
-    for (int i = (map->current + 1); i < map->capacity; i++) {
-        if (map->buckets[i] != NULL && map->buckets[i]->key != NULL) {
-            map->current = i;
-            return map->buckets[i];
-        }
-    }
-
-    return NULL;
+  for (int i = (map->current + 1); i < map->capacity; i++) {
+    if (map->buckets[i] != NULL && map->buckets[i]->key != NULL) {
+      map->current = i;
+      return map->buckets[i];
+   }
+  }
+  return NULL;
 }

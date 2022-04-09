@@ -238,3 +238,17 @@ Sat Apr  9 22:44:27 UTC 2022:
  tests:  16|1
 total_score: 60/70
 75022eb
+Sat Apr  9 22:54:41 UTC 2022: 
+ hashmap.c | 9 +++++++++
+ 1 file changed, 9 insertions(+)
+In file included from test.c:4:0:
+hashmap.c: In function ‘enlarge’:
+hashmap.c:65:11: error: unused variable ‘auxArreglo’ [-Werror=unused-variable]
+   Pair ** auxArreglo = map->buckets;
+           ^~~~~~~~~~
+hashmap.c:64:7: error: unused variable ‘auxCapacidad’ [-Werror=unused-variable]
+   int auxCapacidad = map->capacity;
+       ^~~~~~~~~~~~
+cc1: all warnings being treated as errors
+Compilation failed
+d51f9b1
