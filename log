@@ -252,3 +252,17 @@ hashmap.c:64:7: error: unused variable ‘auxCapacidad’ [-Werror=unused-variab
 cc1: all warnings being treated as errors
 Compilation failed
 d51f9b1
+Sat Apr  9 22:57:05 UTC 2022: 
+ hashmap.c | 8 +++++++-
+ 1 file changed, 7 insertions(+), 1 deletion(-)
+In file included from test.c:4:0:
+hashmap.c: In function ‘enlarge’:
+hashmap.c:70:19: error: comparison between pointer and integer [-Werror]
+   for (int i=0; i < auxArreglo; i++){
+                   ^
+hashmap.c:64:7: error: unused variable ‘auxCapacidad’ [-Werror=unused-variable]
+   int auxCapacidad = map->capacity;
+       ^~~~~~~~~~~~
+cc1: all warnings being treated as errors
+Compilation failed
+cc99d8c
