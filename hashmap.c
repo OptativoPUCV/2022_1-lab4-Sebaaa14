@@ -60,6 +60,7 @@ void insertMap(HashMap * map, char * key, void * value) {
 void enlarge(HashMap * map) {
   enlarge_called = 1; //no borrar (testing purposes)
   //////////////////////////////////////////// 
+  
   //Lo hice con lo que explico la clase, pro 
   int auxCapacidad = map->capacity;
   Pair ** auxArreglo = map->buckets;
@@ -71,7 +72,7 @@ void enlarge(HashMap * map) {
     if (auxArreglo[i]!=NULL){
       insertMap(map,auxArreglo[i]->key,auxArreglo[i]->value);
     }
-    else free(auxArreglo[i]);
+    //else free(auxArreglo[i]);
   }
   free (auxArreglo);
 }
