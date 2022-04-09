@@ -45,14 +45,17 @@ void insertMap(HashMap * map, char * key, void * value) {
   while (map->buckets[pos] != NULL && map->buckets[pos]->key != NULL){
     if(is_equal(map->buckets[pos]->key, key) == 1)
       return; 
-    pos = (pos + 1) % map->capacity;
+    pos = ((pos+1) % map->capacity); //para ir avanzando
   }
   
   if (map->buckets[pos] != NULL){
     map->buckets[pos]->key = key;
     map->buckets[pos]->value = value;
-  } else map->buckets[pos] =createPair(key,value);
+  } //else map->buckets[pos] =createPair(key,value);
 
+  if (map->buckets[pos] == NULL)
+    createPair(key,value);
+  
   map->size ++;
   
 }
