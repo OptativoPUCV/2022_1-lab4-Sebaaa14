@@ -67,7 +67,7 @@ void enlarge(HashMap * map) {
   map->buckets=(Pair**) malloc (sizeof(Pair*)*map->capacity);
   map->size=0;
 
-  for (int i=0; i < auxArreglo; i++){
+  for (int i=0; i < auxCapacidad; i++){
     if (auxArreglo[i]!=NULL){
       insertMap(map,auxArreglo[i]->key,auxArreglo[i]->value);
     }
