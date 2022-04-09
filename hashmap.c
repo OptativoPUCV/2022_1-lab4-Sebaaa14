@@ -72,7 +72,6 @@ void enlarge(HashMap * map) {
     if (auxArreglo[i]!=NULL){
       insertMap(map,auxArreglo[i]->key,auxArreglo[i]->value);
     }
-    //else free(auxArreglo[i]);
   }
   free (auxArreglo);
 }
